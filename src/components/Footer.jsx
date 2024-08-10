@@ -11,14 +11,14 @@ const Footer = () => {
     <>
     <footer>
       <Container className='bg-dark text-white p-4' fluid>
-        <Row>
-          <Col className='pe-5'>
+        <Row style={{ gap: '2rem' }}>
+          <Col xs={12} md={6}>
             <Stack>
               <h2>زويتة</h2>
               <p>نبذة عن زويتة</p>
             </Stack>
           </Col>
-          <Col>
+          <Col xs={12} md={6}>
             <Stack>
               <h2>الأقسام الرئيسية</h2>
               <div className='d-flex p-2' style={{gap: '3rem'}}>
@@ -35,7 +35,7 @@ const Footer = () => {
               </div>
             </Stack>
           </Col>
-          <Col style={{ maxWidth: '400px' }}>
+          <Col xs={12} md={6} style={{ maxWidth: '400px' }}>
             <h4>تواصل معنا</h4>
             <div className="p-2">
               <p>البريد الإلكتروني</p>

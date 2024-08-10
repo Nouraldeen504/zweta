@@ -12,6 +12,7 @@ const HomeMakeup = () => {
                     object-fit: cover;
                     overflow: hidden;
                     transition: opacity 0.3s ease; /* Smooth transition effect */
+                    width: 100%;
                   }
                   
                   .makeupImage:hover {

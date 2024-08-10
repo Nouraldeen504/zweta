@@ -34,12 +34,12 @@ const CardSlider = () => {
             
             <div className='p-5 border-bottom border-top border-dark' style={{ backgroundColor: '#f8f9fa',width: '100%',}}>
                 <h1 className='text-center mb-5'>آخر التخفيضات</h1>
-                <Carousel indicators={false}>
+                <Carousel indicators={false} >
                     {slides.map((slide, slideIndex) => (
                     <Carousel.Item key={slideIndex} className='px-5'>
-                        <div className="d-flex justify-content-around flex-row">
+                        <div className='d-flex w-100 justify-content-center flex-column flex-lg-row' style={{gap: '2rem'}}>
                         {slide.map((item) => (
-                            <Card key={item.id} style={{ width: '18rem', margin: '0.5rem' }}>
+                            <Card key={item.id} style={{ width: '18rem', margin: '0.5rem auto' }}>
                                 <Card.Img src={item.image} style={{ maxHeight: '300px' , objectFit: 'cover', overflow: 'hidden'}}/>
                                 <Card.Body>
                                     <Card.Title>{item.name}</Card.Title>

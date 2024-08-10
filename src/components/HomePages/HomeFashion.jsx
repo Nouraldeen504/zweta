@@ -14,6 +14,7 @@ const HomeFashion = () => {
                     object-fit: cover;
                     overflow: hidden;
                     transition: opacity 0.3s ease; /* Smooth transition effect */
+                    width: 100%;
                   }
                   
                   .homeCategoryImageF:hover {
@@ -26,7 +27,7 @@ const HomeFashion = () => {
     
             <div className='p-5 border-bottom border-top border-dark' style={{ backgroundColor: '#f8f9fa',width: '100%',}}>
                 <h1 className='text-center mb-5'>استكشف عالم الموضى معنا</h1>
-                <div className='d-flex w-100 justify-content-around '>
+                <div className='d-flex w-100 justify-content-center flex-column flex-lg-row' style={{gap: '2rem'}}>
                     <div>
                         <Link to="products/menFashion">
                             <img src={menFashion} alt="" className='homeCategoryImageF' />
