@@ -11,7 +11,7 @@ const HomePage = () => {
     <>
       <MyCarousel />
       <CardSlider />
-      <HomeCategories />
+      <HomeCategories/>
       <HomeFashion />
       <HomeMakeup />
       <Footer />

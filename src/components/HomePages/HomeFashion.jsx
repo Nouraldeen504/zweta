@@ -25,7 +25,7 @@ const HomeFashion = () => {
             </style>
 
     
-            <div className='p-5 border-bottom border-top border-dark' style={{ backgroundColor: '#f8f9fa',width: '100%',}}>
+            <div className='p-5 border-bottom border-top border-dark' style={{ backgroundColor: '#f8f9fa',width: '100%',}}  id="fashion">
                 <h1 className='text-center mb-5'>استكشف عالم الموضى معنا</h1>
                 <div className='d-flex w-100 justify-content-center flex-column flex-lg-row' style={{gap: '2rem'}}>
                     <div>

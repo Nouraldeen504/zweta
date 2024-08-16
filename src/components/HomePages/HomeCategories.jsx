@@ -26,7 +26,7 @@ const HomeCategories = () => {
             </style>
 
     
-            <div className='p-5 border-bottom border-top border-dark'>
+            <div className='p-5 border-bottom border-top border-dark'  id="home">
                 <h1 className='text-center mb-5'>كل ما تحتاجه لبيتك</h1>
                 <div className='d-flex w-100 justify-content-center flex-column flex-lg-row' style={{gap: '2rem'}}>
                     <div>

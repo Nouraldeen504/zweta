@@ -6,7 +6,7 @@ import ShopDropdown from './ShopDropdown';
 
 const MyNavbar = () => {
   return (
-    <Navbar bg="dark" expand="lg" data-bs-theme="dark" className='p-3'>
+    <Navbar bg="dark" expand="lg" data-bs-theme="dark" className='p-3' sticky="top">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <p className='m-0 fs-3'>زويتة</p>
@@ -22,7 +22,7 @@ const MyNavbar = () => {
             <Nav.Link as={Link} to="/contact" className='fs-5'>تواصل معنا</Nav.Link>
           </Nav>
           <Nav className="me-auto text-center fs-5" >
-            <Nav.Link href="#cart">
+            <Nav.Link as={Link} to="/cart">
               <FaShoppingCart />
             </Nav.Link>
           </Nav>

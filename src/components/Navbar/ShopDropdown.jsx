@@ -4,9 +4,9 @@ import { NavDropdown } from 'react-bootstrap';
 const ShopDropdown = () => {
   return (
     <>
-      <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-      <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-      <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+      <NavDropdown.Item href="#home" className='text-end'>منزلية</NavDropdown.Item>
+      <NavDropdown.Item href="#fashion" className='text-end'>ملابس</NavDropdown.Item>
+      <NavDropdown.Item href="#makeup" className='text-end'>مستحضرات تجميل</NavDropdown.Item>
       <NavDropdown.Divider />
       <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
     </>
