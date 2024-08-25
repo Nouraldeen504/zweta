@@ -4,7 +4,6 @@ import CardSlider from '../CardSlider';
 import HomeCategories from '../HomePages/HomeCategories';
 import HomeFashion from '../HomePages/HomeFashion';
 import HomeMakeup from '../HomePages/HomeMakeup';
-import Footer from '../Footer';
 
 const HomePage = () => {
   return (
@@ -14,7 +13,6 @@ const HomePage = () => {
       <HomeCategories/>
       <HomeFashion />
       <HomeMakeup />
-      <Footer />
     </>
   )
 }
