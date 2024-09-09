@@ -4,27 +4,28 @@ import App from './App.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap-rtl/dist/css/bootstrap-rtl.min.css';
 // import { ThemeProvider } from 'react-bootstrap';
+// {isLoading ? <Loading /> : <App />}
 import { CartProvider } from './context/cart.jsx';
 import Loading from './Loading.jsx';
 
 function Main() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const handleLoad = () => {
-      setIsLoading(false);
-    };
+  // useEffect(() => {
+  //   const handleLoad = () => {
+  //     setIsLoading(false);
+  //   };
 
-    // Wait for everything to load
-    window.addEventListener('load', handleLoad);
+  //   // Wait for everything to load
+  //   window.addEventListener('load', handleLoad);
 
-    // Cleanup the event listener
-    return () => window.removeEventListener('load', handleLoad);
-  }, []);
+  //   // Cleanup the event listener
+  //   return () => window.removeEventListener('load', handleLoad);
+  // }, []);
 
   return (
     <>
-      {isLoading ? <Loading /> : <App />}
+      <App />
     </>
   );
 }
