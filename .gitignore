@@ -1,4 +1,4 @@
-# Logs
+# Existing content
 logs
 *.log
 npm-debug.log*
@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python/Django specific (if applicable)
+__pycache__/
+*.py[cod]
+*.env
+venv/
+env/
