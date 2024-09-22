@@ -10,14 +10,22 @@ const AdminPage = () => {
     const [showModal, setShowModal] = useState(false);
     const [currentProduct, setCurrentProduct] = useState(null);
 
+    const baseUrl = 'http://127.0.0.1:8000/api/api';
+
+
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/api/categories/')
+
+        const token = localStorage.getItem('access_token');
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+        // Fetch categories
+        axios.get(`${baseUrl}/categories/`)
             .then(response => setCategories(response.data))
             .catch(error => console.error(error));
     }, []);
 
     useEffect(() => {
-        let url = 'http://127.0.0.1:8000/api/api/products/';
+        let url = `${baseUrl}/products/`;
         if (selectedCategory) {
             url += `?category=${selectedCategory}`;
         }
@@ -38,8 +46,8 @@ const AdminPage = () => {
 
     const handleSaveProduct = (productData, productId) => {
         const apiUrl = productId 
-            ? `http://127.0.0.1:8000/api/api/products/${productId}/` 
-            : 'http://127.0.0.1:8000/api/api/products/';
+            ? `${baseUrl}/products/${productId}/` 
+            : `${baseUrl}/products/`;
     
         const request = productId 
             ? axios.put(apiUrl, productData, {
@@ -69,10 +77,8 @@ const AdminPage = () => {
             });
     };
     
-    
-
     const handleDeleteProduct = (id) => {
-        axios.delete(`http://127.0.0.1:8000/api/api/products/${id}/`)
+        axios.delete(`${baseUrl}/products/${id}/`)
             .then(() => {
                 setProducts(products.filter(p => p.id !== id));
             });
@@ -80,6 +86,12 @@ const AdminPage = () => {
 
     const handleCategoryChange = (e) => {
         setSelectedCategory(e.target.value);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('access');
+        localStorage.removeItem('refresh');
+        window.location.href = '/login'; // Redirect to login page
     };
 
     return (
@@ -95,6 +107,7 @@ const AdminPage = () => {
                     ))}
                 </select>
                 <button className="btn btn-primary" onClick={handleAddProduct}>إضافة منتج جديد</button>
+                <button className="btn btn-danger py-0" onClick={handleLogout}>تسجيل خروج</button>
             </div>
             <ProductTable
                 products={products}

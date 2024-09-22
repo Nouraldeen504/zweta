@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Stack from 'react-bootstrap/Stack'
+import {Link} from 'react-router-dom';
 
 const year = new Date().getFullYear();
 
@@ -44,7 +45,7 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
-        <div className='text-center pt-5'><hr />&copy; {year} زويتة، جميع الحقوق محفوظة </div>
+        <div className='text-center pt-5'><hr /><Link to="/admin" style={{textDecoration: 'none', color: 'white'}}>&copy;</Link> {year} زويتة، جميع الحقوق محفوظة </div>
       </Container>
     </footer>
 

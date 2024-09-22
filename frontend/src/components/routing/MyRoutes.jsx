@@ -12,11 +12,20 @@ import Makeup from '../ProductPages/Makeup';
 import MenFashion from '../ProductPages/MenFashion';
 import WomenFashion from '../ProductPages/WomenFashion';
 import AdminPage from '../Admin/AdminPage';
+import Login from '../Login'
+import ProtectedRoute from './ProtectedRoute';
 
 
 const MyRoutes = () => {
     return (
         <Routes>
+            {/* <Route path='/admin' element={<AdminPage />} /> */}
+            <Route path='/login' element={<Login />} />
+            <Route path="/admin" element={
+                    <ProtectedRoute>
+                        <AdminPage />
+                    </ProtectedRoute>
+                } />
             <Route exact path="/" element={<HomePage />} />
             <Route path="/new" element={<NewPage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -27,8 +36,7 @@ const MyRoutes = () => {
             <Route path="/products/accessories" element={<Accesories />} />
             <Route path="/products/menFashion" element={< MenFashion/>} />
             <Route path="/products/womenFashion" element={<WomenFashion />} />
-            <Route path='/products/makeup' element={<Makeup />} />
-            <Route path='/admin' element={<AdminPage />} />
+            <Route path='/products/makeup' element={<Makeup />} /> 
         </Routes>
     );
 };

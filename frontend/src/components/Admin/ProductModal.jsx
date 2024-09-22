@@ -26,7 +26,12 @@ const ProductModal = ({ show, onHide, onSave, product }) => {
     }, [product]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/api/categories/')
+        const token = localStorage.getItem('access_token');
+        axios.get('http://127.0.0.1:8000/api/api/categories/', {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
             .then(response => setCategories(response.data))
             .catch(error => console.error(error));
     }, []);
