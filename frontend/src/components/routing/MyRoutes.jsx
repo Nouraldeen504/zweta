@@ -5,6 +5,14 @@ import NewPage from '../pages/NewPage';
 import AboutPage from '../pages/AboutPage';
 import ContactPage from '../pages/ContactPage';
 import Cart from '../Cart';
+import Accesories from '../ProductPages/Accessories';
+import HomeAccessories from '../ProductPages/HomeAccessories';
+import Kitchen from '../ProductPages/Kitchen';
+import Makeup from '../ProductPages/Makeup';
+import MenFashion from '../ProductPages/MenFashion';
+import WomenFashion from '../ProductPages/WomenFashion';
+import AdminPage from '../Admin/AdminPage';
+
 
 const MyRoutes = () => {
     return (
@@ -14,12 +22,13 @@ const MyRoutes = () => {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/products/kitchen" element={<p>Kitchen products</p>} />
-            <Route path="/products/HomeAccessories" element={<p>Home products</p>} />
-            <Route path="/products/accessories" element={<p>accessories products</p>} />
-            <Route path="/products/menFashion" element={<p>men Fashion</p>} />
-            <Route path="/products/womenFashion" element={<p>women Fashion</p>} />
-            <Route path='/products/makeup' element={<p>Makeup page</p>} />
+            <Route path="/products/kitchen" element={<Kitchen />} />
+            <Route path="/products/HomeAccessories" element={<HomeAccessories />} />
+            <Route path="/products/accessories" element={<Accesories />} />
+            <Route path="/products/menFashion" element={< MenFashion/>} />
+            <Route path="/products/womenFashion" element={<WomenFashion />} />
+            <Route path='/products/makeup' element={<Makeup />} />
+            <Route path='/admin' element={<AdminPage />} />
         </Routes>
     );
 };
