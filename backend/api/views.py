@@ -1,12 +1,9 @@
-# views.py
-
 from rest_framework import viewsets
 from .models import Category, Product
-from .serializers import CategorySerializer, ProductSerializer, UserSerializer
+from .serializers import CategorySerializer, ProductSerializer
 from rest_framework.response import Response
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.decorators import api_view, permission_classes
+# from rest_framework.permissions import IsAuthenticated
+# from rest_framework.decorators import api_view, permission_classes
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
@@ -24,7 +21,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         return queryset
     
     def update(self, request, *args, **kwargs):
-        partial = True  # Allow partial updates
+        partial = True
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
 
@@ -35,20 +32,11 @@ class ProductViewSet(viewsets.ModelViewSet):
             self.perform_update(serializer)
             return Response(serializer.data)
         
-        return Response(serializer.errors, status=400)  # Return errors if validation fails
+        return Response(serializer.errors, status=400)
 
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def admin_data(request):
-    # Only accessible to authenticated users
-    return Response({'message': 'This is the admin data'})
+# @api_view(['GET'])
+# @permission_classes([IsAuthenticated])
+# def admin_data(request):
 
-# URL patterns
-from django.urls import path
+#     return Response({'message': 'This is the admin data'})
 
-urlpatterns = [
-    path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/admin-data/', admin_data, name='admin-data'),  # Protected admin data route
-]
-    
